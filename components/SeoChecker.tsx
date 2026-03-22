@@ -125,7 +125,7 @@ export default function SeoChecker() {
       }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
           <img
-            src="https://mitsumori-eta.vercel.app/img/logo.png"
+            src="/logo.png"
             alt="Bennet BWS"
             style={{ height: 28, objectFit: 'contain' }}
             onError={e => { (e.target as HTMLImageElement).style.display = 'none' }}
