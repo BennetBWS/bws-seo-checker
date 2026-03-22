@@ -109,7 +109,7 @@ export default function SeoChecker() {
         }
       `}</style>
 
-      {/* Header - 見積もりシミュレーターと同じ白ヘッダー */}
+      {/* Header */}
       <header style={{
         background: '#fff',
         borderBottom: '1px solid var(--bws-border)',
@@ -127,7 +127,11 @@ export default function SeoChecker() {
           <img
             src="/logo.png"
             alt="Bennet BWS"
-            style={{ height: 28, objectFit: 'contain' }}
+            style={{
+              height: 28,
+              objectFit: 'contain',
+              filter: 'brightness(0) saturate(100%) invert(35%) sepia(98%) saturate(600%) hue-rotate(195deg) brightness(90%)',
+            }}
             onError={e => { (e.target as HTMLImageElement).style.display = 'none' }}
           />
           <span style={{ fontSize: 14, color: 'var(--bws-text)', fontWeight: 600 }}>
@@ -136,7 +140,7 @@ export default function SeoChecker() {
         </div>
       </header>
 
-      {/* サマリーバー - 見積もりシミュレーターのダークバーと同じスタイル */}
+      {/* サマリーバー */}
       <div style={{
         background: 'linear-gradient(135deg, #111827 0%, #2D3748 100%)',
         color: '#fff',
@@ -150,7 +154,6 @@ export default function SeoChecker() {
             SEO総合チェッカー
           </div>
 
-          {/* Input */}
           <div className="input-wrap">
             <div className="input-inner">
               <span style={{
@@ -201,12 +204,7 @@ export default function SeoChecker() {
             }}>⚠️ {error}</div>
           )}
 
-          {/* 注意書き */}
-          <div style={{
-            marginTop: 14,
-            fontSize: 11,
-            color: 'rgba(255,255,255,0.45)',
-          }}>
+          <div style={{ marginTop: 14, fontSize: 11, color: 'rgba(255,255,255,0.45)' }}>
             ※ 診断結果はあくまで参考情報です。実際のSEO効果は様々な要因により異なります。
           </div>
         </div>
@@ -214,26 +212,16 @@ export default function SeoChecker() {
 
       {/* Main content */}
       <div style={{ maxWidth: 860, margin: '0 auto', padding: '24px 16px 80px' }}>
-
-        {/* Loading skeleton */}
         {loading && (
           <div>
-            {[1,2,3,4].map(i => (
+            {[1, 2, 3, 4].map(i => (
               <div key={i} className="skeleton" style={{ height: 100, marginBottom: 12 }} />
             ))}
           </div>
         )}
-
-        {/* Results */}
         {result && !loading && <ResultSection result={result} />}
-
-        {/* 空状態 */}
         {!result && !loading && (
-          <div style={{
-            textAlign: 'center',
-            padding: '60px 20px',
-            color: 'var(--bws-muted)',
-          }}>
+          <div style={{ textAlign: 'center', padding: '60px 20px', color: 'var(--bws-muted)' }}>
             <div style={{ fontSize: 48, marginBottom: 16 }}>🔍</div>
             <div style={{ fontSize: 16, fontWeight: 600, marginBottom: 8, color: 'var(--bws-text)' }}>
               URLを入力して診断開始
