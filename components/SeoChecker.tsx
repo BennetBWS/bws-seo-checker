@@ -108,7 +108,7 @@ export default function SeoChecker() {
         }
       `}</style>
 
-      {/* Header - 見積もりシミュレーターと同じ */}
+      {/* Header */}
       <header style={{
         background: '#fff',
         borderBottom: '1px solid var(--bws-border)',
@@ -125,7 +125,7 @@ export default function SeoChecker() {
           <img
             src="/logo.png"
             alt="Bennet BWS"
-            style={{ height: 28, objectFit: 'contain' }}
+            style={{ height: 28, objectFit: 'contain', filter: 'brightness(0)' }}
             onError={e => { (e.target as HTMLImageElement).style.display = 'none' }}
           />
           <span style={{
@@ -243,7 +243,7 @@ export default function SeoChecker() {
         fontSize: 12,
         background: '#fff',
       }}>
-        © 2026 株式会社Bennet BWS
+        © 2025 株式会社Bennet BWS
       </footer>
     </div>
   )
