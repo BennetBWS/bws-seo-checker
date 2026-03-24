@@ -38,7 +38,6 @@ export default function SeoChecker() {
   return (
     <div style={{ minHeight: '100vh', background: 'var(--bws-bg)' }}>
       <style>{`
-        .hero-title { font-size: clamp(26px, 5vw, 44px); }
         .input-wrap { display: flex; flex-direction: column; gap: 8px; }
         .input-inner {
           display: flex;
@@ -109,7 +108,7 @@ export default function SeoChecker() {
         }
       `}</style>
 
-      {/* Header */}
+      {/* Header - 見積もりシミュレーターと同じ */}
       <header style={{
         background: '#fff',
         borderBottom: '1px solid var(--bws-border)',
@@ -117,7 +116,6 @@ export default function SeoChecker() {
         height: 60,
         display: 'flex',
         alignItems: 'center',
-        justifyContent: 'space-between',
         position: 'sticky',
         top: 0,
         zIndex: 100,
@@ -127,14 +125,16 @@ export default function SeoChecker() {
           <img
             src="/logo.png"
             alt="Bennet BWS"
-            style={{
-              height: 28,
-              objectFit: 'contain',
-              filter: 'brightness(0) saturate(100%) invert(35%) sepia(98%) saturate(600%) hue-rotate(195deg) brightness(90%)',
-            }}
+            style={{ height: 28, objectFit: 'contain' }}
             onError={e => { (e.target as HTMLImageElement).style.display = 'none' }}
           />
-          <span style={{ fontSize: 14, color: 'var(--bws-text)', fontWeight: 600 }}>
+          <span style={{
+            width: 1,
+            height: 20,
+            background: '#D1D5DB',
+            display: 'inline-block',
+          }} />
+          <span style={{ fontSize: 14, color: '#1F2937', fontWeight: 500 }}>
             SEO診断ツール
           </span>
         </div>
@@ -243,7 +243,7 @@ export default function SeoChecker() {
         fontSize: 12,
         background: '#fff',
       }}>
-        © 2025 株式会社Bennet BWS
+        © 2026 株式会社Bennet BWS
       </footer>
     </div>
   )
